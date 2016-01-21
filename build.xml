@@ -13,8 +13,8 @@
     <property name="build.dependencies" location="dependencies" />
 
     <path id="classpath">
-        <fileset dir="/usr/share/java" includes="**/*.jar" />
         <fileset dir="${build.dependencies}" includes="**/*.jar" />
+        <fileset dir="/usr/share/java" includes="**/*.jar" />
     </path>
 
     <target name="get-java-version">
@@ -28,7 +28,7 @@
     <target name="check-java-version" depends="get-java-version" unless="current.java.version">
         <fail message="Unsupported Java version: ${ant.java.version}. Make sure that the Java version is 1.7 or greater."/>
     </target>
-    
+
     <target name="init">
         <mkdir dir="${build.root}" />
     </target>
