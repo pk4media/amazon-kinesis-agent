@@ -42,7 +42,7 @@ public class MultiLineSplitter implements ISplitter {
      * next line after the maximum number of lines have been reached, or else the end
      * of the buffer if there are not enough lines to reach the maximum.
      *
-     * @return {@code position} of the buffer at the starting index of the next new pattern;
+     * @return {@code position} of the buffer at the starting index of the next set of lines;
      *         {@code -1} if the end of the buffer was reached.
      */
     private int advanceBufferToNextExtent(ByteBuffer buffer) {
