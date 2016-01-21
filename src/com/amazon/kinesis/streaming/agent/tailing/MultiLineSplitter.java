@@ -15,7 +15,7 @@ package com.amazon.kinesis.streaming.agent.tailing;
 
 import java.nio.ByteBuffer;
 
-import com.amazon.kinesis.streaming.agent.ByteBuffers;
+import com.google.common.base.Preconditions;
 
 /**
  * Returns one record per N lines.
@@ -58,6 +58,7 @@ public class MultiLineSplitter implements ISplitter {
                   return buffer.position();
                 }
             } else {
+              // For some reason we didn't end on a new line
               isNewLine = false;
             }
         }
